@@ -62,6 +62,8 @@ https://github-repository-listing.netlify.app/
 
 ## Documentation
 
+>Github repository listing is a web-application.
+
 > Github repository listing is such a website in whic user enter any repos name get their result on clicking the search icon.
 
 >User can also sort the data according to the last updated time,forks and stars.
