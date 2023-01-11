@@ -50,6 +50,7 @@ const RepositoriesDetail = () => {
               <a
                 href={userRepoDetail?.html_url}
                 className="hover:text-blue-400 underline"
+                target={"_blank"}
               >
                 {userRepoDetail?.name}
               </a>

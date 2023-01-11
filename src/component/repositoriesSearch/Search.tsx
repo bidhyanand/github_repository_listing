@@ -11,31 +11,26 @@ import Pagination from "../pagination/Pagination";
 export default function Search() {
   // to store the api data
   const [arrayData, setArrayData] = useState<any>();
-  console.log(arrayData, "arrayapi");
 
   // to check the loading case
   const [isLoading, setIsLoading] = useState(false);
 
   // to store the page no
   const [page, setPage] = useState(1);
-  console.log(page, "page");
 
   // to store search string for reposotories
   const [searchString, setSearchString] = useState("");
 
   // state to save sorting order
   const [sortState, setSortState] = useState("none");
-  console.log(sortState, "sort");
 
   // state to save the display the number of repo
   const [numberOfRepo, setNumberOfRepo] = useState(30);
-  console.log(numberOfRepo, "repo");
 
   const { register, handleSubmit } = useForm<searchStringInterface>();
 
   // function  handle form
   const onSubmit = (data: formInterface) => {
-    console.log(data, "data");
 
     setIsLoading(true);
     setSearchString(data.searchString);

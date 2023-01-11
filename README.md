@@ -1,4 +1,5 @@
 
+
 # Github Repository Finder
 
 A brief description of what this project does and who it's for
@@ -45,10 +46,12 @@ This project is deployed in the Netlify
 
 Netlify: Develop and deploy websites and apps and preview in real time how its look like.
 
+https://github-repository-listing.netlify.app/
+
 
 ## Tech Stack
 
-**Client:** React, react-router-dom, typescript,TailwindCSS
+**Client:** React, react-router-dom, typescript
 
 **Design:** TailwindCSS
 
