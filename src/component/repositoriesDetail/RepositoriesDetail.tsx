@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { repoDetailInterface } from "../../models/repoDetailModels";
 import { getRepoDetail } from "../../services/apiServices/repoDetail";
 
 const RepositoriesDetail = () => {
   // state to save the clicked user repo detail
-  const [userRepoDetail, setUserRepoDetail] = useState<any>();
+  const [userRepoDetail, setUserRepoDetail] = useState<repoDetailInterface>();
+  
   const [isLoading, setIsLoading] = useState(true);
 
   // taking owner and repo namw from url
   const { owner, name } = useParams();
 
   useEffect(() => {
-    getRepoDetail(owner, name).then((res) => {
+    getRepoDetail(owner || "", name || "" ).then((res) => {
       setUserRepoDetail(res.data);
       setIsLoading(false);
     });
@@ -33,25 +35,32 @@ const RepositoriesDetail = () => {
       ) : (
         <div className="flex justify-center ">
           <div className="flex  flex-col text-center w-1/3 justify-center px-10 pt-10 pb-5 shadow-2xl border-b-2 rounded-lg bg-gray-100 hover:bg-slate-300  ">
-            <a href={userRepoDetail.owner.html_url} >
-              <div className="flex gap-1 ">
-                <div className="font-semibold">Full_name : </div>{" "}
-                {userRepoDetail.full_name}
-              </div>
-            </a>
-            <a href={userRepoDetail.html_url}>
+            <div className="flex gap-1 ">
+              <div className="font-semibold">Full_name : </div>{" "}
+              <a
+                href={userRepoDetail?.owner.html_url}
+                target="_blank"
+                className="hover:text-blue-400 underline "
+              >
+                {userRepoDetail?.full_name}
+              </a>
+            </div>
             <div className="flex gap-1 ">
               <div className="font-semibold">Reposotiries_Name : </div>{" "}
-              {userRepoDetail.name}
+              <a
+                href={userRepoDetail?.html_url}
+                className="hover:text-blue-400 underline"
+              >
+                {userRepoDetail?.name}
+              </a>
             </div>{" "}
-            </a>
             <div className="flex gap-1 ">
               <div className="font-semibold">Open_issues : </div>{" "}
-              {userRepoDetail.open_issues}
+              {userRepoDetail?.open_issues}
             </div>{" "}
             <div className="flex gap-1 ">
               <div className="font-semibold">Default_branch : </div>{" "}
-              {userRepoDetail.default_branch}
+              {userRepoDetail?.default_branch}
             </div>
           </div>
         </div>

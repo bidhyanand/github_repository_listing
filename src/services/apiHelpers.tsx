@@ -3,7 +3,7 @@ import axios from "axios";
 export const repoSearchUrl = "https://api.github.com/search/repositories?q=";
 export const repoDetailUrl = "https://api.github.com/repos/";
 
-export const repoSearchAPi = async (method, data) => {
+export const repoSearchAPi = async (method:any, data:any) => {
   let response = await axios({
     method: method,
     url: `${repoSearchUrl}${data}`,
@@ -15,7 +15,7 @@ export const repoSearchAPi = async (method, data) => {
   return response;
 };
 
-export const repoDetailApi = async (method, data) => {
+export const repoDetailApi = async (method:any, data:any) => {
   let response = await axios({
     method: method,
     url: `${repoDetailUrl}${data}`,
