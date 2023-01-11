@@ -5,7 +5,6 @@ import { FaSearch, FaRegStar, FaEye, FaCodeBranch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { formInterface } from "../../models/formModal";
 import { searchStringInterface } from "../../models/searchModels";
-import { sortInterface } from "../../models/sortModal";
 import { getSearchedRepositories } from "../../services/apiServices/repoSearch";
 import Pagination from "../pagination/Pagination";
 
@@ -141,7 +140,7 @@ export default function Search() {
         <div>
           {arrayData?.total_count === 0 ? (
             <div className="flex justify-center py-5 font-bold text-3xl text-red-500 ">
-              Data not found.........
+              Repos not found.........
             </div>
           ) : (
             <div className=" grid grid-cols-3  p-5 gap-2 ">
