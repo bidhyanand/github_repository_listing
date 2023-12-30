@@ -9,6 +9,7 @@ const App = () => {
       path: "/",
       element: <Search />,
     },
+    
     {
       path: "/repo-detail/:owner/:name",
       element: <RepositoriesDetail />,
